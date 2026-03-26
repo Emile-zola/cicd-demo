@@ -9,8 +9,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo '=== Récupération du code ==='
-                checkout scm
+                echo '=== Récupération du code (optimisée) ==='
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/TON_REPO.git']],
+                    extensions: [
+                        [$class: 'CloneOption',
+                            depth: 1,
+                            shallow: true,
+                            noTags: true,
+                            timeout: 30
+                        ]
+                    ]
+                ])
             }
         }
  
