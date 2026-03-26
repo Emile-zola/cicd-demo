@@ -13,7 +13,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/TON_REPO.git']],
+                    userRemoteConfigs: [[url: 'https://github.com/Emile-zola/cicd-demo.git']],
                     extensions: [
                         [$class: 'CloneOption',
                             depth: 1,
