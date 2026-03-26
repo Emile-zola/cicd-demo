@@ -41,7 +41,12 @@ pipeline {
         }
  
         stage('Deploy Local') {
-            when { branch 'main' }
+            when { branch 'main' } 
+            /*
+            when {
+                    expression { env.GIT_BRANCH == 'origin/main' }
+                }
+            */
             steps {
 		 echo '=== Déploiement local ==='
                 sh '''

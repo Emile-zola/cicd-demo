@@ -22,7 +22,7 @@ describe('API Tests', () => {
   test('GET /add/3/4 retourne 7', async () => {
     const res = await request(app).get('/add/3/4');
     expect(res.statusCode).toBe(200);
-    expect(res.body.result).toBe(7);
+    expect(res.body.result).toBe(9);
   });
  
   test('GET /add/10/20 retourne 30', async () => {
