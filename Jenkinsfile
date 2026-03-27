@@ -48,7 +48,7 @@ pipeline {
                 }
             */
             steps {
-		 echo '=== Déploiement local ==='
+		        echo '=== Déploiement local ==='
                 sh '''
                     docker stop ${APP_NAME} 2>/dev/null || true
                     docker rm   ${APP_NAME} 2>/dev/null || true
